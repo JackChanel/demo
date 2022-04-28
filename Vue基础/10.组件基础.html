@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.组件基础</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <my-component title="大标题~"></my-component>
+      <hr />
+    </div>
+    <script type="module">
+      import { title, tag } from './utils/message.js'
+      Vue.component('my-component', {
+        template: `
+        <div>
+          <button @click='say'>{{msg}}</button>
+          <div>快乐小prop ：{{title}}</div>
+          <div>快乐content ：{{content?'content':'no'}}</div>
+        </div>
+        `,
+        props: ['title', 'content'],
+        data: function () {
+          return {
+            msg: '我是一个小组件',
+          }
+        },
+        methods: {
+          say: function () {
+            console.log('hello')
+          },
+        },
+      })
+      Vue.component('button-counter', {
+        data: function () {
+          return {
+            count: 0,
+          }
+        },
+        template:
+          '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
+      })
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          userName: '',
+          passWord: '',
+          age: 0,
+          message: 'Hello Vue',
+        },
+      })
+    </script>
+  </body>
+</html>

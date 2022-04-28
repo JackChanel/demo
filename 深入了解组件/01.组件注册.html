@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { title, tag } from './utils/message.js'
+      // 全局注册组件 Vue.component(),任意一个Vue实例都可以使用
+      //  缺点：无需引入的组件会造成格外开销
+      Vue.component('my-component', {
+        // settings
+      })
+
+      // 局部注册组件
+      let componentA = {
+        data: function () {
+          return {
+            msg: '组件A的msg',
+          }
+        },
+        template: `
+          <div>组件A~{{this.msg}}</div>
+        `,
+      }
+      let vm = new Vue({
+        el: '#app',
+        components: {
+          'component-a': componentA,
+        },
+        data: {
+          userName: '',
+          passWord: '',
+          age: 0,
+          message: 'Hello Vue',
+        },
+      })
+    </script>
+  </body>
+</html>

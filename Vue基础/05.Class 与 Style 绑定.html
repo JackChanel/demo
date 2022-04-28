@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .big {
+        font-size: x-large;
+      }
+
+      .border {
+        border: 1px solid rebeccapurple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>类绑定</h1>
+      <div :class="classControl">通过property对象实现Class控制</div>
+      <button @click="changeClass">changeClass</button>
+      <div :class="cpdClass">通过计算属性返回的对象实现Class控制</div>
+      <button @click="changeClass">changeClass</button>
+      <div
+        :class="[{red:classControl.red},classList[1],classControl.red?classList[2]:'']"
+      >
+        通过数组语法实现Class控制
+      </div>
+      <button @click="changeClass">changeClass</button>
+      <h1>样式绑定</h1>
+      <div :style="styleControl">通过property对象实现Style控制</div>
+      <div :style="[styleControl,overrideStyle]">
+        通过property对象实现Style控制
+      </div>
+    </div>
+    <script type="module">
+      import { title, tag } from './utils/message.js'
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          userName: '',
+          passWord: '',
+          age: 0,
+          message: 'Hello Vue',
+          classControl: {
+            red: true,
+            big: true,
+          },
+          classList: ['red', 'big', 'border'],
+          styleControl: {
+            color: '#bfa',
+            fontSize: '22px',
+          },
+          overrideStyle: {
+            color: '#000',
+            transform:
+              'rotate(20deg)  scale(1)  skew(10deg,5deg)  translate(40px,90px)',
+          },
+        },
+        computed: {
+          cpdClass: function () {
+            return this.classControl
+          },
+        },
+        methods: {
+          changeClass: function () {
+            this.classControl.red = !this.classControl.red
+          },
+          changeStyle: function () {},
+        },
+      })
+    </script>
+  </body>
+</html>

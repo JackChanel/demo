@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        ul>li:first-child {
+            color: red;
+        }
+
+        p::first-letter {
+            font-size: 50px;
+            font-weight: 800;
+        }
+
+        .border {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1" style="border-top: 10px solid rgb(170, 170, 170);width: 300px;">
+        <span style="border-top: 10px solid rgb(255, 115, 115);color: rgb(255, 115, 115);">沃特</span>
+    </div>
+
+
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div style="width: 400px;">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ut repudiandae minus ipsa, fugiat similique
+            vel quisquam! Perspiciatis voluptate pariatur, error exercitationem unde quia consequuntur sit ipsa sequi
+            dignissimos velit.
+        </p>
+    </div>
+    <div style="border: solid; border-width: 100px 0px 100px 100px;border-color: #ffffff00 black;float: left;"></div>
+
+
+
+    <div style="margin-top: 20px;background-color: rgb(81, 255, 159); width: 300px;height: 300px;overflow: hidden;">
+        <div style="width: 100px;height: 100px;background-color: blue;"></div>
+        <div style="width: 100px;height: 100px;background-color: red;"></div>
+    </div>
+
+    <div
+        style="width: 200px;background-color: aquamarine; height: 200px;overflow: hidden; box-shadow: 10px 10px 10px rgb(0, 0, 0,0.3);border-radius: 100px;">
+        <div style=" background-color: rgb(53, 138, 109);width: 100px;height: 400px;"></div>
+    </div>
+    <div style=" background-color: rgb(178, 214, 202);width: 100px;height: 400px;"></div>
+
+    <div id="move" style="border-color: red yellow blue green;border-style: solid; border-width: 500px;width: 0px;">
+    </div>
+
+    <!-- <div style=" background-color: rgb(195, 195, 195);height: 100px;border: 1px solid;float: left;">
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+        <div style=" background-color: rgb(150, 94, 94);width: 50px;height: 50px;border: 1px solid;float: right;"></div>
+
+    </div>
+    <div style=" background-color: rgb(195, 195, 195);width: 500px;height: 100px;border: 1px solid;float: left;"></div>
+    <div style=" background-color: rgb(195, 195, 195);width: 500px;height: 100px;border: 1px solid;float: left;"></div> -->
+
+    <div style="width: 500px;height: 500px;background-color: #bfa;position: relative;">
+        <div style="width: 200px;height: 200px; background-color: aquamarine; position: absolute;">
+            1
+        </div>
+        <div style="width: 200px;height: 200px;background-color: blue;float: left;">
+            2
+        </div>
+    </div>
+
+    <div style="width: 500px;height: 500px;background-color: rgb(65, 189, 152);position: relative;">
+        <div
+            style="width: 200px;height: 200px; background-color: aquamarine; position: absolute;margin-top: auto;margin-bottom: auto;top: 0;bottom: 0;">
+            1
+        </div>
+    </div>
+
+
+    <div style="width: 500px;height: 500px;background-color: rgb(65, 189, 152);position: relative;margin-top: 30px;">
+        <div
+            style="width: 200px;height: 200px; background-color: aquamarine; position: absolute;margin: auto;top: 0;bottom: 0;left: 0;right: 0;">
+            1
+        </div>
+    </div>
+
+
+
+
+
+    <div class="border">
+        <img style="vertical-align: top;float: left;width: 150px;" src="./img/avatar2.png" alt="">
+        <img style="vertical-align: top;float: left;width: 150px;" src="./img/avatar2.png" alt="">
+        <img style="vertical-align: top;float: left;width: 150px;" src="./img/avatar2.png" alt="">
+    </div>
+
+
+
+</body>
+
+<script>
+    var move = document.getElementById('move')
+    move.onmousemove = (e) => {
+        let x = e.offsetX
+        let y = e.offsetY
+        let top = 500 + y
+        let right = 500 - x
+        let bottom = 500 - y
+        let left = 500 + x
+        // console.log(`${y} ${top}px ${right}px ${bottom}px ${left}px`);
+        move.style.borderWidth = `${top}px ${right}px ${bottom}px ${left}px`
+    }
+</script>
+
+</html>

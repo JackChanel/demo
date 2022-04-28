@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>二、Vue实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import { title, tag } from './utils/message.js'
+
+      // 代理对象
+      let proxyData = {
+        userName: '',
+        passWord: '',
+        age: 0,
+        message: 'Hello Vue',
+      }
+      // 创建Vue实例
+      const vm = new Vue({
+        el: '#app',
+        data: proxyData,
+        template: `<div>
+            <div>yes</div>
+            <div>no</div>
+            <button v-on:click="changeData">改变数据</button>
+          </div>`,
+        methods: {
+          changeData() {
+            this.age += 1
+            title(this.age)
+          },
+        },
+        beforeCreate: function () {
+          tag('LifeTime', 'beforeCreate')
+        },
+        created: function () {
+          tag('LifeTime', 'Create')
+        },
+        beforeMount: function () {
+          tag('LifeTime', 'beforeMount')
+        },
+        mounted: function () {
+          tag('LifeTime', 'mounted')
+        },
+        // beforeUpdate: function () {
+        //   tag("LifeTime", "beforeUpdate");
+        // },
+        // updated: function () {
+        //   tag("LifeTime", "updated");
+        // },
+        // beforeDestroy: function () {
+        //   tag("LifeTime", "beforeDestroy");
+        // },
+        // destroyed: function () {
+        //   tag("LifeTime", "destroyed");
+        // },
+      })
+
+      // 测试响应式数据绑定
+      function et_dataUpdate() {
+        title('数据')
+        console.log(vm.message)
+        proxyData.message = 'Welcome~'
+        console.log(vm.message)
+        vm.message = 'Hello Vue'
+        console.log(proxyData.message)
+        // 只有当实例被创建时就已经存在于 data 中的 property 才是响应式的。
+        vm.unInitVal = '未在初始化载入的数据'
+        console.log(proxyData.unInitVal, vm.$data.unInitVal)
+      }
+
+      // 测试Vue实例方法
+      function et_VueMethods() {
+        title('方法')
+        // 数据获取
+        console.log(vm.$data)
+        console.log(vm.$el === document.getElementById('app'))
+        vm.$watch('age', function (o, n) {
+          console.log(o, n)
+        })
+        vm.$data.age++
+      }
+
+      // 执行总闸
+      function main() {
+        et_dataUpdate()
+        et_VueMethods()
+      }
+      // main()
+    </script>
+  </body>
+</html>

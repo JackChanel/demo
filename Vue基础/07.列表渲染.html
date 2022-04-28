@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07.列表渲染</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h3>遍历数组</h3>
+      <div
+        style="font-family: courier"
+        v-for="(item,index) of itemList"
+        :key="item.name"
+      >
+        {{item}}{{index}}{{message}}
+      </div>
+      <h3>遍历对象</h3>
+      <div v-for="(item,key,index) of itemObject" :key="key">
+        {{item}}-{{key}}-index{{index}}
+      </div>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          userName: '',
+          passWord: '',
+          age: 0,
+          message: 'Hello Vue',
+          itemList: [{ name: 'aaaa' }, { name: 'bbbb' }, { name: 'cccc' }],
+          itemObject: {
+            key1: 'val1',
+            key2: 'val2',
+            key3: 'val3',
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

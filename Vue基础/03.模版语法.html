@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03.模版语法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>
+        <div>我大于20？{{age>20?'Yes':'No'}}我的是{{getValue()}}</div>
+        <div v-on:click="getMoreText">
+          点击我会改变{{message}}
+          <div v-on:click="getMoreText" v-once>
+            点击我不会改变，我有v-once{{message}}
+          </div>
+        </div>
+        <p>我想渲染这个：{{ rawHtml }}</p>
+        <p>我用了v-html指令渲染：<span v-html="rawHtml"></span></p>
+        <h3>指令</h3>
+        <p>v-if、v-for是指令</p>
+        <p>v-bind:xxx、v-on:xxx中的xxx称为指令的参数</p>
+        <p>v-on:submit.xxx中的xxx称为指令的修饰符</p>
+        <p>[v-bind: -> :][v-on: -> @]</p>
+        <a v-bind:href="[getUrl()]" v-bind:title="[username]"
+          >测试动态参数：{{getUrl()}}</a
+        >
+        <a :href="[getUrl()]" :title="[username]" @[event].prevent="getMoreText"
+          >测试简写形式：{{getUrl()}}</a
+        >
+      </div>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          username: '超级用户',
+          passWord: '',
+          age: 0,
+          message: '',
+          rawHtml: `<span style="color: red">This should be red.</span>`,
+          event: 'click',
+        },
+        methods: {
+          getMoreText() {
+            this.message += ' hello~ '
+          },
+          getValue() {
+            return this.age
+          },
+          getUrl() {
+            return 'https://www.baidu.com'
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

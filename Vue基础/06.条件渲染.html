@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06.条件渲染</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <template v-if="currentCard=='routeCard'">
+        <div>I am a music card</div>
+      </template>
+      <template v-if="currentCard=='musicCard'">
+        <div>I am a route card</div>
+      </template>
+      <template v-if="currentCard=='giftCard'">
+        <div>I am a gift card</div>
+      </template>
+      <button @click="getCard">拿一个卡片</button>
+      <hr v-show="true" />
+      <hr />
+      <template v-if="currentCards.includes('musicCard')">
+        <div>I am a music card</div>
+      </template>
+      <template v-if="currentCards.includes('routeCard')">
+        <div>I am a route card</div>
+      </template>
+      <template v-if="currentCards.includes('giftCard')">
+        <div>I am a gift card</div>
+      </template>
+    </div>
+    <script type="module">
+      import { title, tag } from './utils/message.js'
+      let vm = new Vue({
+        el: '#app',
+        data: {
+          currentCard: 'routeCard',
+          currentCards: ['routeCard', 'giftCard'],
+          showModules: ['routeCard', 'musicCard', 'giftCard'],
+          message: 'Hello Vue',
+        },
+        methods: {
+          getCard: function () {
+            this.currentCard = this.showModules[Math.floor(Math.random() * 3)]
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

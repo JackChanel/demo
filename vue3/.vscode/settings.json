@@ -1,0 +1,191 @@
+{
+  "terminal.integrated.shellArgs.osx": [],
+  "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+  },
+  "explorer.confirmDelete": false,
+  "files.associations": {
+      "*.cjson": "jsonc",
+      "*.wxss": "css",
+      "*.wxs": "javascript",
+      "*.wxml": "html",
+      "*.api": "jsonc",
+      "*.vue": "html",
+      "*.ts": "typescript"
+  },
+  "emmet.includeLanguages": {
+      "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "java.requirements.JDK11Warning": false,
+  "files.autoSave": "off",
+  "editor.wordWrap": "on",
+  "java.semanticHighlighting.enabled": true,
+  "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "sonarlint.rules": {
+      "java:S2095": {
+          "level": "off"
+      },
+      "javascript:S905": {
+          "level": "off"
+      },
+      "Web:S5148": {
+          "level": "off"
+      },
+      "Web:S1135": {
+          "level": "off"
+      },
+      "javascript:S1135": {
+          "level": "off"
+      },
+      "javascript:S1488": {
+          "level": "off"
+      },
+      "Web:S4084": {
+          "level": "off"
+      },
+      "javascript:S3735": {
+          "level": "off"
+      },
+      "javascript:S3358": {
+          "level": "off"
+      },
+      "javascript:S1186": {
+          "level": "off"
+      },
+      "javascript:S4138": {
+          "level": "off"
+      },
+      "javascript:S125": {
+          "level": "off"
+      },
+      "Web:BoldAndItalicTagsCheck": {
+          "level": "off"
+      }
+  },
+  "vetur.grammar.customBlocks": {
+      "docs": "md",
+      "i18n": "json",
+      "preview-props": "json"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "window.zoomLevel": 1,
+  "editor.tabSize": 2,
+  "editor.accessibilitySupport": "off",
+  "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+  "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "code-runner.runInTerminal": true,
+  "less.compile": {
+      "outExt": ".css"
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "view-in-browser.customBrowser": "chrome",
+  "browser-preview.chromeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+  "view-in-browser.default": "Chrome",
+  "openInDefaultBrowser.run.openWithLocalHttpServer": false,
+  "open-in-browser.default": "Chrome",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "remote.SSH.remotePlatform": {
+      "121.5.220.103": "linux",
+      "阿里云": "linux",
+      "腾讯云": "linux",
+      "英灵神殿": "linux"
+  },
+  "gohome.hour": 17,
+  "gohome.minute": 1,
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "powermode.enabled": false,
+  "editor.fontFamily": "menlo, 'Courier New', monospace",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.automationShell.windows": "",
+  "terminal.integrated.fontFamily": "monospace",
+  "todo-tree.tree.showScanModeButton": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "python.linting.pylintArgs": [
+      "asd"
+  ],
+  "workbench.iconTheme": "vscode-icons",
+  "vetur.format.defaultFormatterOptions": {
+      "js-beautify-html": {
+          "wrap_attributes": ""
+      },
+      "prettyhtml": {
+          "printWidth": 100,
+          "singleQuote": false,
+          "wrapAttributes": false,
+          "sortAttributes": false
+      }
+  },
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "html.format.enable": false,
+  "editor.minimap.enabled": false,
+  "beautify.language": {
+      "js": {
+          "type": [
+              "javascript",
+              "json",
+              "jsonc"
+          ],
+          "filename": [
+              ".jshintrc",
+              ".jsbeautifyrc"
+          ]
+      },
+      "css": [
+          "css",
+          "less",
+          "scss",
+          "wxss"
+      ],
+      "html": [
+          "htm",
+          "html",
+          "wxml"
+      ]
+  },
+  "beautify.config": "",
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "html",
+      {
+          "language": "vue",
+          "autoFix": true
+      }
+  ],
+  "eslint.options": {
+      "plugins": [
+          "html"
+      ]
+  },
+  "remote.SSH.defaultForwardedPorts": [],
+  "remote.SSH.showLoginTerminal": true,
+  "git.confirmSync": false,
+  "workbench.startupEditor": "none",
+  "settingsSync.ignoredSettings": [
+      "remote.SSH.configFile"
+  ],
+  "git.ignoreLegacyWarning": true,
+  "gitlens.advanced.messages": {
+      "suppressGitVersionWarning": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.formatOnSave": true,
+  "editor.fontSize": 14
+}
