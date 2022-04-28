@@ -4,8 +4,8 @@
 <template>
   <div>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <div class="bg-white w500 h100">233</div>
   </div>
-
 </template>
 
 <style>
